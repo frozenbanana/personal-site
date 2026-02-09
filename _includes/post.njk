@@ -1,0 +1,12 @@
+---
+layout: layout.njk
+---
+
+<a href="/blog/" class="back-link">← Back to Blog</a>
+
+<article class="blog-content">
+    <h1 class="blog-title">{{ title }}</h1>
+    <div class="blog-meta">{{ date | dateDisplay }}</div>
+    <br>
+    {{ content | safe }}
+</article>

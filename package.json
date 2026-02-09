@@ -1,0 +1,12 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "Personal website with blog",
+  "scripts": {
+    "build": "npx @11ty/eleventy --output=_site",
+    "serve": "npx @11ty/eleventy --serve --output=_site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,48 @@
+---
+layout: layout.njk
+---
+
+<section>
+    <h2>About Me</h2>
+    <p class="bio">
+        Hello! I'm Henry, someone who enjoys exploring technology and organizing life. 
+        I'm always learning new things and finding better ways to manage projects and ideas.
+    </p>
+</section>
+
+<section>
+    <h2>Latest Blog Posts</h2>
+    {% if collections.blog %}
+    {% for post in collections.blog | slice(0, 3) | reverse %}
+    <article class="blog-post">
+        <h3 class="blog-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <div class="blog-meta">{{ post.data.date | dateDisplay }}</div>
+        <div class="blog-excerpt">{{ post.data.excerpt }}</div>
+        <a href="{{ post.url }}" class="read-more">Read more →</a>
+    </article>
+    {% endfor %}
+    <br>
+    <a href="/blog/" class="read-more">View all posts →</a>
+    {% else %}
+    <p class="bio">No blog posts yet. Check back soon!</p>
+    {% endif %}
+</section>
+
+<section>
+    <h2>Interests</h2>
+    <div class="skills">
+        <span class="skill">Technology</span>
+        <span class="skill">Automation</span>
+        <span class="skill">Organization</span>
+        <span class="skill">Learning</span>
+        <span class="skill">AI & Tools</span>
+    </div>
+</section>
+
+<section>
+    <h2>Get In Touch</h2>
+    <div class="contact">
+        <a href="https://t.me/frozenba">Telegram</a>
+        <a href="mailto:henry@example.com">Email</a>
+    </div>
+</section>
