@@ -1,0 +1,40 @@
+---
+layout: layouts/home.njk
+---
+
+<h2>About Me</h2>
+<p>
+    Hello! I'm Henry, someone who enjoys exploring technology and organizing life.
+    I'm always learning new things and finding better ways to manage projects and ideas.
+</p>
+
+<h2>Latest Blog Posts</h2>
+{% if collections.blog %}
+{% for post in collections.blog | slice(0, 3) | reverse %}
+<article>
+    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    <div>{{ post.data.date | readableDate }}</div>
+    <div>{{ post.data.excerpt }}</div>
+    <a href="{{ post.url }}">Read more →</a>
+</article>
+{% endfor %}
+<br>
+<a href="/blog/">View all posts →</a>
+{% else %}
+<p>No blog posts yet. Check back soon!</p>
+{% endif %}
+
+<h2>Interests</h2>
+<div>
+    <span>Technology</span>
+    <span>Automation</span>
+    <span>Organization</span>
+    <span>Learning</span>
+    <span>AI & Tools</span>
+</div>
+
+<h2>Get In Touch</h2>
+<div>
+    <a href="https://t.me/frozenba">Telegram</a>
+    <a href="mailto:henry@example.com">Email</a>
+</div>

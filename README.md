@@ -26,7 +26,7 @@ Access at http://192.168.0.100:8000 (local network)
 
 ## Adding Blog Posts
 
-1. Create a new Markdown file in `personal-site/blog/`
+1. Create a new Markdown file in `personal-site/content/blog/`
 2. Add front matter at the top:
 ```yaml
 ---
@@ -40,19 +40,41 @@ excerpt: Short description for the blog listing
 3. Write your content in Markdown below the front matter
 4. Build and serve: `npm run build`
 
+## Deployment to Surge.sh
+
+```bash
+# From /home/henry/clawd/
+npm run build
+cd personal-site/_site
+surge --domain henrybergstrom.surge.sh
+```
+
 ## File Structure
 
 ```
 personal-site/
+├── _config/
+│   └── filters.js     # Custom Nunjucks filters
+├── _data/
+│   ├── eleventyDataSchema.js
+│   └── metadata.js     # Site metadata
 ├── _includes/
-│   ├── layout.njk     # Main layout template
-│   └── post.njk       # Individual blog post template
-├── _site/             # Built output (don't edit)
-├── blog/
-│   ├── automation.md  # Example blog post
-│   └── welcome.md     # Example blog post
-├── blog.njk           # Blog listing page
-└── index.njk          # Home page
+│   ├── css/            # CSS files
+│   ├── layouts/        # Page layout templates
+│   │   ├── base.njk   # Base layout
+│   │   ├── home.njk   # Home page
+│   │   └── post.njk   # Blog post layout
+│   └── postslist.njk   # Blog posts list component
+├── _site/              # Built output (don't edit)
+├── content/
+│   ├── blog/           # Blog posts
+│   │   ├── automation.md
+│   │   ├── welcome.md
+│   │   └── web-security-for-juniors.md
+│   ├── blog.njk        # Blog listing page
+│   └── index.njk       # Home page
+├── public/             # Static assets
+└── .eleventy.js        # Eleventy configuration
 ```
 
 ## Markdown in Posts
