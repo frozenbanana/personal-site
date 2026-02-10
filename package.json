@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --quiet"
+    "start": "npx @11ty/eleventy --serve --quiet",
+    "deploy": "npx @11ty/eleventy && surge _site --domain henrybergstrom.surge.sh"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
