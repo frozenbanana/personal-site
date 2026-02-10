@@ -43,11 +43,11 @@ excerpt: Short description for the blog listing
 ## Deployment to Surge.sh
 
 ```bash
-# From /home/henry/clawd/
-npm run build
-cd personal-site/_site
-surge --domain henrybergstrom.surge.sh
+# From /home/henry/clawd/personal-site/
+npm run deploy
 ```
+
+This builds the site and deploys it to `https://henrybergstrom.surge.sh` in one command.
 
 ## File Structure
 
